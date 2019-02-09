@@ -6,7 +6,7 @@ import os
 
 class Game():
     def __init__(self):
-        self.rules()
+        self.introduce()
         self.player_1, self.player_2 = Player.init_players()
         self.board = Board()
         self.active_player = self.randomly_select_starting_player()
@@ -14,7 +14,7 @@ class Game():
 
     def start(self):
         input("\nPress any key to start!")
-        while not self.complete():
+        while not (self.board.is_full() or self.board.has_connect_four()):
             os.system('cls')
             self.print_turn_header(self.active_player)
             self.board.display()
@@ -41,10 +41,7 @@ class Game():
     def change_active_player(self):
         self.active_player = self.player_1 if self.active_player == self.player_2 else self.player_2
 
-    def complete(self):
-        return self.board.is_full() or self.board.has_connect_four()
-
-    def rules(self):
+    def introduce(self):
         os.system('cls')
         self.print_header("CONNECT FOUR")
         print("Objective: To win Connect Four you must be the first player to get four of your markers in a row either horizontally, vertically or diagonally.\n")
