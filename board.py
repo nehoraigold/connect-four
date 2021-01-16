@@ -1,4 +1,4 @@
-class Board():
+class Board:
     def __init__(self):
         self.matrix = self.get_empty_matrix()
         self.selected_column = None

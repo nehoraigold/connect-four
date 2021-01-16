@@ -1,4 +1,4 @@
-class Player():
+class Player:
     @staticmethod
     def init_players():
         player_1_name = ""

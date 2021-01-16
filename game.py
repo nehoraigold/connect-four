@@ -4,7 +4,7 @@ import random
 import os
 
 
-class Game():
+class Game:
     def __init__(self):
         self.introduce()
         self.player_1, self.player_2 = Player.init_players()
