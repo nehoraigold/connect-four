@@ -23,7 +23,6 @@ class Board():
     def get_empty_matrix(self):
         matrix = [[" "] * 7 for x in range(7)]
         matrix.append([str(i + 1) for i in range(7)])
-        print(matrix)
         return matrix
 
     def validate_column(self, column):
